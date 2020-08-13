@@ -1,6 +1,6 @@
 {
   "name": "typeormer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "TypeORM helper",
   "author": "Solufa <solufa2020@gmail.com>",
   "license": "MIT",
