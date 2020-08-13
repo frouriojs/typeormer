@@ -1,8 +1,18 @@
 import path from 'path'
-import { Config } from './getConfig'
+import createText from './createText'
 
-export default ({ output }: Config) => {
-  const text = '/* eslint-disable */'
+export default (inputDir: string) => {
+  const { imports, entities, migrations, subscribers } = createText(inputDir)
 
-  return { text, filePath: path.posix.join(output, '$template.ts') }
+  return {
+    text: `/* eslint-disable */${imports}
+
+export default {
+  entities: [${entities}],
+  migrations: [${migrations}],
+  subscribers: [${subscribers}]
+}
+`,
+    filePath: path.posix.join(inputDir, '$orm.ts')
+  }
 }

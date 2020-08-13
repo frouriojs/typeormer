@@ -1,22 +1,21 @@
 import minimist from 'minimist'
-import getConfig from './getConfig'
 import write from './writeRouteFile'
 import watch from './watchInputDir'
 import build from './buildTemplate'
 
 export const run = (args: string[]) => {
   const argv = minimist(args, {
-    string: ['version', 'config', 'watch'],
-    alias: { v: 'version', c: 'config', w: 'watch' }
+    string: ['version', 'dir', 'watch'],
+    alias: { v: 'version', d: 'dir', w: 'watch' }
   })
+  const dirs = ((argv.dir as string) ?? '.').split(',')
 
-  // eslint-disable-next-line no-unused-expressions
   argv.version !== undefined
     ? console.log(`v${require('../package.json').version}`)
     : argv.watch !== undefined
-    ? getConfig(argv.config).forEach(config => {
-        write(build(config))
-        watch(config.input, () => write(build(config)))
+    ? dirs.forEach(dir => {
+        write(build(dir))
+        watch(dir, () => write(build(dir)))
       })
-    : getConfig(argv.config).map(build).forEach(write)
+    : dirs.forEach(dir => write(build(dir)))
 }
