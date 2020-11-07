@@ -13,13 +13,13 @@
 - Using [npm](https://www.npmjs.com/):
 
   ```sh
-  $ npm install reflect-metadata typeorm typeormer
+  $ npm install typeorm typeormer
   ```
 
 - Using [Yarn](https://yarnpkg.com/):
 
   ```sh
-  $ yarn add reflect-metadata typeorm typeormer
+  $ yarn add typeorm typeormer
   ```
 
 ## Usage
@@ -104,7 +104,7 @@ $ npm run typeormer # created $orm.ts
 `index.ts`
 ```ts
 import 'reflect-metadata'
-import { createConnection, Connection, ConnectionOptions } from 'typeorm'
+import { createConnection } from 'typeorm'
 import ormconfig from './ormconfig'
 import options from './$orm'
 
