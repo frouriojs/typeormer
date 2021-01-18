@@ -33,7 +33,7 @@
     "typescript"
   ],
   "dependencies": {
-    "chokidar": "^3.4.2",
+    "chokidar": "^3.5.1",
     "minimist": "^1.2.5"
   },
   "eslintConfig": {
