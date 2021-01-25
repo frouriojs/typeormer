@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/frouriojs/typeormer/compare/v0.1.1...v0.1.2) (2021-01-25)
+
+
+### Bug Fixes
+
+* update chokidar@3.5.1 ([cea5348](https://github.com/frouriojs/typeormer/commit/cea5348df6050d4c703b348d3783d8c476b69c35))
+
 ### [0.1.1](https://github.com/frouriojs/typeormer/compare/v0.1.0...v0.1.1) (2020-11-07)
 
 
