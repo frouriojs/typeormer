@@ -38,21 +38,21 @@ export class ${getFileName(e)} {
       (e, i) =>
         `\nimport { ${getFileName(e)} as Entity${i} } from '${e
           .replace(inputDir, '.')
-          .replace('.ts', '')}'`
+          .replace(/\.(?:ts|js)$/, '')}'`
     )
     .join('')}${migrations
     .map((m, i) => {
       const names = getFileName(m).split('-')
       return `\nimport { ${names[1]}${names[0]} as Migration${i} } from '${m
         .replace(inputDir, '.')
-        .replace('.ts', '')}'`
+        .replace(/\.(?:ts|js)$/, '')}'`
     })
     .join('')}${subscribers
     .map(
       (s, i) =>
         `\nimport { ${getFileName(s)} as Subscriber${i} } from '${s
           .replace(inputDir, '.')
-          .replace('.ts', '')}'`
+          .replace(/\.(?:ts|js)$/, '')}'`
     )
     .join('')}`
 
